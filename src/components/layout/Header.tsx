@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X, Moon, Sun, Code2 } from 'lucide-react';
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -44,9 +44,15 @@ const Header: React.FC = () => {
         <nav className="flex items-center justify-between">
           <a 
             href="#home" 
-            className="text-2xl font-heading font-bold text-primary-800 dark:text-white"
+            className="flex items-center space-x-2 group"
           >
-            SR<span className="text-secondary-500">.</span>
+            <div className="w-10 h-10 rounded-lg bg-primary-800 dark:bg-primary-700 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12">
+              <Code2 className="w-6 h-6 text-white transform transition-all duration-300 group-hover:scale-110" />
+            </div>
+            <span className="text-2xl font-heading font-bold text-primary-800 dark:text-white relative overflow-hidden group-hover:text-secondary-500 transition-colors duration-300">
+              SRS
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-secondary-500 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            </span>
           </a>
 
           {/* Desktop Navigation */}
